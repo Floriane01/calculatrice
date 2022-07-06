@@ -1,6 +1,7 @@
 // Programmation impérative: le code est exécuté ligne après ligne
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -8,19 +9,23 @@ int main()
     float op1, op2; // 0.0
     float resultat; // 0.0
 
-    printf("Quel type d'opération vous souhaitez faire\?\?\?\?(+,-,*,/)\n");
-    scanf("%c", &operateur);
+    printf("Veuillez saisir votre operation avec 2 operandes et un operateur parmis (+,-,*,/)\n");
+
+    // 9 + 2
+    // 5 * 3
+    scanf("%f %c %f", &op1, &operateur, &op2);
+
     // TODO: arrêter le programme si l'utilisateur n'appuie pas sur le bon opérateur
     if (operateur != '+' && operateur != '-' && operateur != '*' && operateur != '/')
     {
         printf("Veuillez sélectionner un opérateur entre le +, -, * et /\n");
-        return 65;
+        return EXIT_FAILURE;
     }
 
-    printf("Veuillez saisir le premier opérande: ");
-    scanf("%f", &op1);
-    printf("Veuillez saisir le second opérande: ");
-    scanf("%f", &op2);
+    // printf("Veuillez saisir le premier opérande: ");
+    // scanf("%f", &op1);
+    // printf("Veuillez saisir le second opérande: ");
+    // scanf("%f", &op2);
     switch (operateur)
     {
     case '+':
@@ -38,5 +43,5 @@ int main()
     }
 
     printf("le résultat de votre opération est: %.2f\n", resultat);
-    return 0;
+    return EXIT_SUCCESS;
 }
